@@ -1,6 +1,6 @@
 import Logo from "@/assets/images/logo.png";
 import Image from "next/image";
-import Button from "../button/Button";
+import Button from "@/component/button";
 
 import "@/app/globals.css";
 
