@@ -29,7 +29,7 @@ const Toogle = ({ label, onToggle }: ToogleProps) => {
             </div>
 
             {label && (
-                <p className="text-[16px] ml-[10px] text-text-grey font-regular">
+                <p className="text-[16px] ml-2.5 text-text-grey font-regular">
                     {label}
                 </p>
             )}
