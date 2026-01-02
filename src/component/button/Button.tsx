@@ -5,9 +5,10 @@ import React from "react";
 interface ButtonProps {
     label: string;
     variant: "solid" | "outline" | "text";
+    styling?: string;
 }
 
-const Button = ({ label, variant }: ButtonProps) => {
+const Button = ({ label, variant, styling }: ButtonProps) => {
 
     const variantStyling = () => {
         switch (variant) {
@@ -25,7 +26,7 @@ const Button = ({ label, variant }: ButtonProps) => {
     return (
         <button
             className={`px-[30px] py-[9px] rounded-xl text-[24px] 
-                ${variantStyling()}`}
+                ${variantStyling()} ${styling}`}
         >
             {label}
         </button>
