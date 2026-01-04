@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { seon } from '@/assets';
 
-import { fn } from 'storybook/test';
 import Testimonial from './Testimonial';
 
 

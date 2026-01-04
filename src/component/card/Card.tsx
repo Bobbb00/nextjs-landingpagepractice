@@ -1,69 +1,83 @@
-import Button from "../button/Button";
-import Toogle from "../toogle/Toogle";
-import "../../app/globals.css";
+import Button from '../button/Button';
+import Toogle from '../toogle/Toogle';
+import '../../app/globals.css';
+import Image from 'next/image';
 
 interface CardProps {
-    name : string;
-    price: string;
-    bill: 'TEXT' | 'YEAR';
-    billString?: string;
-    featureLists: string[];
-    position: 'LEFT'  | 'CENTER' | 'RIGHT';
-    btnLabel: string;
+  name: string;
+  price: string;
+  bill: 'TEXT' | 'YEAR';
+  billString?: string;
+  featureLists: string[];
+  position: 'LEFT' | 'CENTER' | 'RIGHT';
+  btnLabel: string;
 }
 
-
-const Card = ({name, price, bill, billString, featureLists, position, btnLabel}: CardProps) => {
-    const cardStyle = () => {
-        if (position === 'CENTER') {
-            return 'h-[555px] rounded-2xl drop-shadow-[0_0_100px_rgba(0,0,0,0.3)]';
-        }
-        if (position === 'LEFT') {
-            return "h-[500px] rounded-l-2xl border-border border-[1px]";
-        }
-        if (position === 'RIGHT') {
-            return "h-[500px] rounded-r-2xl border-border border-[1px]";
-        }
+const Card = ({
+  name,
+  price,
+  bill,
+  billString,
+  featureLists,
+  position,
+  btnLabel,
+}: CardProps) => {
+  const cardStyle = () => {
+    if (position === 'CENTER') {
+      return 'h-[555px] rounded-2xl drop-shadow-[0_0_100px_rgba(0,0,0,0.3)]';
     }
-    return (
-        <div className={`w-[375px] bg-white ${cardStyle()} flex flex-col justify-between`}>
-            <div className="p-6">
-                <h6 className="text-[36px] font-bold">{name}</h6>
-                <p className="text-[16px] font-regular">{price}</p>
-            </div>
-        
-        <div className="h-px bg-natural w-full"></div>
-        <div className="px-6 py-2">
-            {bill === "TEXT" ? (
-                <p className="text-[14px] text-grey font-regular">{billString}</p>
-            ) : (
-                <Toogle label="Billed Yearly"/>
-            )}
-        </div>
-        <div className="h-px bg-natural w-full"></div>
+    if (position === 'LEFT') {
+      return 'h-[500px] rounded-l-2xl border-border border-[1px]';
+    }
+    if (position === 'RIGHT') {
+      return 'h-[500px] rounded-r-2xl border-border border-[1px]';
+    }
+  };
+  return (
+    <div
+      className={`w-[375px] bg-white ${cardStyle()} flex flex-col justify-between`}
+    >
+      <div className="p-6">
+        <h6 className="text-[36px] font-bold">{name}</h6>
+        <p className="font-regular text-[16px]">{price}</p>
+      </div>
 
-        <div className="px-6 py-4">
-            {featureLists.map((feature, index) => (
-            <div key={index} className="flex items-center gap-3 mb-3">
-                <img src="#" alt="check-icon" />
-                <p className="font-regular text-[14px]">{feature}</p>
-            </div>
-            ))}
-        </div>
+      <div className="bg-natural h-px w-full"></div>
+      <div className="px-6 py-2">
+        {bill === 'TEXT' ? (
+          <p className="text-grey font-regular text-[14px]">{billString}</p>
+        ) : (
+          <Toogle label="Billed Yearly" />
+        )}
+      </div>
+      <div className="bg-natural h-px w-full"></div>
 
-        <div className="flex flex-col justify-center items-center mt-auto w-full px-6 mb-6">
-            <Button label={btnLabel} variant={position === "CENTER" ? "solid" : "outline"} styling="w-full" />
-            {position === "CENTER" && (
-            <p className="text-[14px] mt-4">
-                or{' '}
-                <a href="#" className="font-bold underline">Contact Sales</a>
-            </p>
-            )}
-        </div>
+      <div className="px-6 py-4">
+        {featureLists.map((feature, index) => (
+          <div key={index} className="mb-3 flex items-center gap-3">
+            <Image src="#" alt="check-icon" />
+            <p className="font-regular text-[14px]">{feature}</p>
+          </div>
+        ))}
+      </div>
 
-        </div>
-
-    );
+      <div className="mt-auto mb-6 flex w-full flex-col items-center justify-center px-6">
+        <Button
+          label={btnLabel}
+          variant={position === 'CENTER' ? 'solid' : 'outline'}
+          styling="w-full"
+        />
+        {position === 'CENTER' && (
+          <p className="mt-4 text-[14px]">
+            or{' '}
+            <a href="#" className="font-bold underline">
+              Contact Sales
+            </a>
+          </p>
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default Card;
