@@ -1,12 +1,9 @@
-import Navbar from "@/component/navbar";
-import Image from "next/image";
-import "@/app/globals.css";
-
+import Navbar from '@/component/navbar';
 
 export default function Home() {
   return (
     <>
-    <Navbar />
+      <Navbar />
     </>
   );
 }

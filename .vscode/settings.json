@@ -1,0 +1,6 @@
+// font
+{
+  "editor.fontFamily": "'Verdana', 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "oneDarkPro.editorTheme": "Retro"
+}
