@@ -8,14 +8,25 @@ interface CardProps {
     bill: 'TEXT' | 'YEAR';
     billString?: string;
     featureLists: string[];
-    isCenter: boolean;
+    position: 'LEFT'  | 'CENTER' | 'RIGHT';
     btnLabel: string;
 }
 
 
-const Card = ({name, price, bill, billString, featureLists, isCenter, btnLabel}: CardProps) => {
+const Card = ({name, price, bill, billString, featureLists, position, btnLabel}: CardProps) => {
+    const cardStyle = () => {
+        if (position === 'CENTER') {
+            return 'h-[555px] rounded-2xl drop-shadow-[0_0_100px_rgba(0,0,0,0.3)]';
+        }
+        if (position === 'LEFT') {
+            return "h-[500px] rounded-l-2xl border-border border-[1px]";
+        }
+        if (position === 'RIGHT') {
+            return "h-[500px] rounded-r-2xl border-border border-[1px]";
+        }
+    }
     return (
-        <div className="w-[375px] h-[502px] bg-white rounded-2xl drop-shadow-[0_0_100px_rgba(0,0,0,0.3)] flex flex-col justify-between">
+        <div className={`w-[375px] bg-white ${cardStyle()} flex flex-col justify-between`}>
             <div className="p-6">
                 <h6 className="text-[36px] font-bold">{name}</h6>
                 <p className="text-[16px] font-regular">{price}</p>
@@ -41,8 +52,8 @@ const Card = ({name, price, bill, billString, featureLists, isCenter, btnLabel}:
         </div>
 
         <div className="flex flex-col justify-center items-center mt-auto w-full px-6 mb-6">
-            <Button label={btnLabel} variant={isCenter ? "solid" : "outline"} styling="w-full" />
-            {isCenter && (
+            <Button label={btnLabel} variant={position === "CENTER" ? "solid" : "outline"} styling="w-full" />
+            {position === "CENTER" && (
             <p className="text-[14px] mt-4">
                 or{' '}
                 <a href="#" className="font-bold underline">Contact Sales</a>

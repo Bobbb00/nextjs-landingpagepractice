@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --color-primary: #2563eb;
   --color-natural: #111827;
+  --color-border: #aeafb0;
   --color-text-grey: #585D68;
   --color-primary-hover: #6692f1;
   --font-sans: var(--font-geist-sans);

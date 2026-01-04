@@ -26,7 +26,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const label: Story = {
+export const CenterCard: Story = {
     args: {
         name: 'Pro',
         price: '$12 per user/month',
@@ -34,8 +34,34 @@ export const label: Story = {
         billString: 'Billed Yearly',
         featureLists: ["All Free Features +", "Connect 100+ apps",
              "Advanced Automations", "Premium Support"],
-        isCenter: true,
+        position: 'CENTER',
         btnLabel: "Get Started"
+    },
+};
+
+export const LeftCard: Story = {
+    args: {
+        name: 'Free',
+        price: '$0',
+        bill: 'TEXT',
+        billString: 'Free For Everyone',
+        featureLists: ["All Free Features +", "Connect 100+ apps",
+             "Advanced Automations", "Premium Support"],
+        position: 'LEFT',
+        btnLabel: "Get Started"
+    },
+};
+
+export const RightCard: Story = {
+    args: {
+        name: 'Enterprise',
+        price: 'Contact Us',
+        bill: 'TEXT',
+        billString: 'Custom Solutions for your team',
+        featureLists: ["All Free Features +", "Connect 100+ apps",
+             "Advanced Automations", "Premium Support"],
+        position: 'RIGHT',
+        btnLabel: "Request Trial"
     },
 };
 
