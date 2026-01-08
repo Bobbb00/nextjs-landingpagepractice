@@ -2,7 +2,7 @@ import Button from '../button/Button';
 import Toogle from '../toogle/Toogle';
 import '../../app/globals.css';
 import Image from 'next/image';
-
+import { symbol } from '@/assets';
 interface CardProps {
   name: string;
   price: string;
@@ -55,7 +55,7 @@ const Card = ({
       <div className="px-6 py-4">
         {featureLists.map((feature, index) => (
           <div key={index} className="mb-3 flex items-center gap-3">
-            <Image src="#" alt="check-icon" />
+            <Image src={symbol} alt="check-icon" />
             <p className="font-regular text-[14px]">{feature}</p>
           </div>
         ))}
