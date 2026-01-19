@@ -22,7 +22,7 @@ const Button = ({ label, variant, styling }: ButtonProps) => {
   };
   return (
     <button
-      className={`rounded-xl px-[30px] py-[10px] text-[24px] whitespace-nowrap ${variantStyling()} ${styling}`}
+      className={`rounded-xl px-[30px] py-2.5 text-[24px] whitespace-nowrap ${variantStyling()} ${styling}`}
     >
       {label}
     </button>

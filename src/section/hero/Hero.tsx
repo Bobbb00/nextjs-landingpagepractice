@@ -5,7 +5,7 @@ import { hero } from '@/assets';
 
 const Hero = () => {
   return (
-    <section className="mb-[50px] flex items-center justify-center gap-[70px] px-[100px] py-[80px]">
+    <section className="mb-[50px] flex items-center justify-center gap-[70px] px-[100px] py-20">
       <div>
         <h5 className="text-[48px] font-bold">
           Sync Your
