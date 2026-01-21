@@ -3,7 +3,10 @@ import { carbon, code, pixel } from '@/assets';
 import Image from 'next/image';
 const Feature = () => {
   return (
-    <section className="mb-[50px] flex w-full flex-col items-center justify-center py-20">
+    <section
+      id="features"
+      className="mt-[100px] flex scroll-mt-40 flex-col items-center justify-center"
+    >
       <h2 className="text-[36px] font-bold">Build Your Custom Automations</h2>
       <h1 className="font-regular text-[28px]">
         Create powerful workflows without writing a single line of code.

@@ -2,7 +2,10 @@ import '@/app/globals.css';
 
 const Works = () => {
   return (
-    <div className="flex w-full flex-col items-center justify-center py-20">
+    <section
+      id="works"
+      className="mt-[100px] flex w-full flex-col items-center justify-center"
+    >
       <h2 className="text-[36px] font-bold">How It Works</h2>
       <h3 className="font-regular text-[28px]">
         Turn complexity into simplicity in just 3 easy steps.
@@ -75,7 +78,7 @@ const Works = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -27,10 +27,10 @@ const Card = ({
       return 'h-[555px] rounded-2xl drop-shadow-[0_0_100px_rgba(0,0,0,0.3)]';
     }
     if (position === 'LEFT') {
-      return 'h-[500px] rounded-l-2xl border-border border-[1px]';
+      return 'h-[500px] rounded-l-2xl border-border border-r-0 border-[1px]';
     }
     if (position === 'RIGHT') {
-      return 'h-[500px] rounded-r-2xl border-border border-[1px]';
+      return 'h-[500px] rounded-r-2xl border-border border-l-0   border-[1px]';
     }
   };
   return (
@@ -42,7 +42,7 @@ const Card = ({
         <p className="font-regular text-[16px]">{price}</p>
       </div>
 
-      <div className="bg-natural h-px w-full"></div>
+      <div className="border-natural w-full border-t-[1px]"></div>
       <div className="px-6 py-2">
         {bill === 'TEXT' ? (
           <p className="text-grey font-regular text-[14px]">{billString}</p>
@@ -50,7 +50,7 @@ const Card = ({
           <Toogle label="Billed Yearly" />
         )}
       </div>
-      <div className="bg-natural h-px w-full"></div>
+      <div className="border-natural w-full border-t-[1px]"></div>
 
       <div className="px-6 py-4">
         {featureLists.map((feature, index) => (

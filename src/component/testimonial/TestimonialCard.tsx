@@ -8,14 +8,14 @@ interface TestimonialProps {
   position: string;
   testimonialText: string;
 }
-const Testimonial = ({
+const TestimonialCard = ({
   imageSrc,
   name,
   position,
   testimonialText,
 }: TestimonialProps) => {
   return (
-    <div className="h-80 w-[345px] p-6  flex flex-col justify-between items-center drop-shadow-[1px_5px_10px_rgba(0,0,0,0.25)] rounded-lg bg-white">
+    <div className="flex h-80 w-[345px] flex-col items-center justify-between rounded-lg bg-white p-6 drop-shadow-[1px_5px_10px_rgba(0,0,0,0.25)]">
       <div>
         <Image
           src={imageSrc || avatar}
@@ -24,18 +24,16 @@ const Testimonial = ({
           className="rounded-full"
           alt="avatar-image"
         />
-        <h6 className="text-[16px] font-bold mt-2.5 text-center">
-          {name}
-        </h6>
-        <p className="text-[14px] font-regular mt-2 text-center">
+        <h6 className="mt-2.5 text-center text-[16px] font-bold">{name}</h6>
+        <p className="font-regular mt-2.5 text-center text-[14px]">
           {position}
         </p>
       </div>
-      <p className="text-[14px] font-regular text-center">
+      <p className="font-regular mt-[24px] text-center text-[14px]">
         {testimonialText}
       </p>
     </div>
   );
 };
 
-export default Testimonial;
+export default TestimonialCard;

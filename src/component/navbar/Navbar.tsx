@@ -7,7 +7,7 @@ import '@/app/globals.css';
 
 const Navbar = () => {
   return (
-    <div className="relative w-screen">
+    <div className="relative sticky top-0 z-50 w-screen bg-white">
       <nav className="mx-auto flex w-full max-w-[100vw] items-center justify-between p-[50px]">
         <Image src={Logo} alt="Logo" className="w-40" />
 
@@ -18,20 +18,20 @@ const Navbar = () => {
           >
             Home
           </a>
-          <Link
-            href="#"
+          <a
+            href="#features"
             className="hover:text-primary text-[20px] text-black hover:font-bold"
           >
             About
-          </Link>
+          </a>
           <a
-            href="#"
+            href="#price"
             className="hover:text-primary text-[20px] text-black hover:font-bold"
           >
             Pricing
           </a>
           <a
-            href="#"
+            href="#footer"
             className="hover:text-primary text-[20px] text-black hover:font-bold"
           >
             Contact
